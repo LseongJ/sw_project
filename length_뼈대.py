@@ -42,7 +42,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 0.393701
     # 이런식으로 input_type을 기준으로 작성하면됨
-    # 바로 밑에 출력은 맨 밑에서 할거니 출력코드 위에다가 적으면 
+    # 바로 밑에 출력은 맨 밑에서 할거니 출력코드 위에다가 적으면 됨
     print(num, input_type, "was converted to" ,length(num), output_type, end = '')            
    
 
