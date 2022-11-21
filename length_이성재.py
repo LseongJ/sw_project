@@ -46,7 +46,11 @@ if calculator_type == "length":
             if output_type == "mm":
                 return num * 1000
             elif output_type == "cm":
+<<<<<<< HEAD
                 return num * 100            
+=======
+                return num * 100             
+>>>>>>> c4f66798aa687901cc4f15a25859af579c184044
             elif output_type == "km":
                 return num * 0.001
             elif output_type == "ft":
