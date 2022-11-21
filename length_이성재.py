@@ -46,7 +46,7 @@ if calculator_type == "length":
             if output_type == "mm":
                 return 
             elif output_type == "cm":
-                return              
+                return num * 100             
             elif output_type == "km":
                 return 
             elif output_type == "ft":
