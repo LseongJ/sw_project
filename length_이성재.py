@@ -18,7 +18,7 @@ num = int(input())
 if calculator_type == "length":
     
     def length(num):
-        if input_type == "mm":             # 이성재 담당
+        if input_type == "mm":             
             if output_type == "cm":
                 return num * 0.1
             elif output_type == "m":
@@ -30,7 +30,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 0.03937
         
-        if input_type == 'cm':          # 이성재 담당
+        if input_type == 'cm':          
             if output_type == "mm": 
                 return num * 10
             elif output_type == "m":
@@ -41,6 +41,54 @@ if calculator_type == "length":
                 return num * 0.032808
             elif output_type == "inch":
                 return num * 0.393701
+        
+        if input_type == "m":             
+            if output_type == "mm":
+                return 
+            elif output_type == "cm":
+                return              
+            elif output_type == "km":
+                return 
+            elif output_type == "ft":
+                return 
+            elif output_type == "inch":
+                return 
+
+        if input_type == "km":             
+            if output_type == "mm":
+                return 
+            elif output_type == "cm":
+                return              
+            elif output_type == "m":
+                return 
+            elif output_type == "ft":
+                return 
+            elif output_type == "inch":
+                return 
+        
+        if input_type == "ft":             
+            if output_type == "mm":
+                return 
+            elif output_type == "cm":
+                return                
+            elif output_type == "m":
+                return 
+            elif output_type == "km":
+                return 
+            elif output_type == "inch":
+                return 
+        
+        if input_type == "inch":             
+            if output_type == "mm":
+                return 
+            elif output_type == "cm":
+                return               
+            elif output_type == "m":
+                return 
+            elif output_type == "km":
+                return 
+            elif output_type == "ft":
+                return 
         
     print(num, input_type, "was converted to" ,length(num), output_type, end = '')            
     
