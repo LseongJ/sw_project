@@ -44,51 +44,51 @@ if calculator_type == "length":
         
         if input_type == "m":             
             if output_type == "mm":
-                return 
+                return num * 1000
             elif output_type == "cm":
-                return              
+                return num * 100            
             elif output_type == "km":
-                return 
+                return num * 0.001
             elif output_type == "ft":
-                return 
+                return num * 3.28084
             elif output_type == "inch":
-                return 
+                return num * 39.370079
 
         if input_type == "km":             
             if output_type == "mm":
-                return 
+                return num * 1000000
             elif output_type == "cm":
-                return              
+                return num * 100000            
             elif output_type == "m":
-                return 
+                return num * 1000
             elif output_type == "ft":
-                return 
+                return num * 32808399
             elif output_type == "inch":
-                return 
+                return num * 393700787
         
         if input_type == "ft":             
             if output_type == "mm":
-                return 
+                return num * 304.8
             elif output_type == "cm":
-                return                
+                return num * 30.48              
             elif output_type == "m":
-                return 
+                return num * 0.3048
             elif output_type == "km":
-                return 
+                return num * 0.000305
             elif output_type == "inch":
-                return 
+                return num * 12
         
         if input_type == "inch":             
             if output_type == "mm":
-                return 
+                return num * 25.4
             elif output_type == "cm":
-                return               
+                return num * 2.54             
             elif output_type == "m":
-                return 
+                return num * 0.0254
             elif output_type == "km":
-                return 
+                return num * 0.000025
             elif output_type == "ft":
-                return 
+                return num * 0.083333
         
     print(num, input_type, "was converted to" ,length(num), output_type, end = '')            
     
