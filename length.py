@@ -1,6 +1,5 @@
-# 길이: mm, cm, m, km, ft, inch
-# 넓이: m^2, km^2, 평
-# 무게: mg, g, kg, t, lb
+
+
 # 부피: cc, ml, l
 # 온도: K, C, F
 # 속도: m/s, km/h, kn, mach
@@ -17,6 +16,7 @@ output_type = input()
 print("Guide : Input <number> which will be converted.")
 num = int(input())
 
+# 길이: mm, cm, m, km, ft, inch
 if calculator_type == "length":
     
     def length(num):
@@ -64,9 +64,9 @@ if calculator_type == "length":
             elif output_type == "m":
                 return num * 1000
             elif output_type == "ft":
-                return num * 32808399
+                return num * 3280.8399
             elif output_type == "inch":
-                return num * 393700787
+                return num * 39370.0787
         
         elif input_type == "ft":             
             if output_type == "mm":
@@ -94,6 +94,7 @@ if calculator_type == "length":
         
     print(num, input_type, "was converted to" ,length(num), output_type)            
 
+# 넓이: m^2, km^2, 평
 if calculator_type == "area":   
     def area(num):
         if input_type == "m^2":
@@ -112,8 +113,65 @@ if calculator_type == "area":
             if output_type == "m^2":
                 return num * 3.305785
             elif output_type == "km^2":
-                return num * 3.305785 * 0.000001
+                return num * 3.3058e-6
             
     print(num, input_type, "was converted to" ,area(num), output_type)
 
+# 무게: mg, g, kg, t, lb
+if calculator_type == "weight":
+    def weight(num):
+        if input_type == "mg":
+            if output_type == "g":
+                return num * 0.001
+            elif output_type == "kg":
+                return num * 1e-6
+            elif output_type == "t":
+                return num * 10e-10
+            elif output_type == "lb":
+                return num * 2.2046e-6
         
+        if input_type == "g":
+            if output_type == "mg":
+                return num * 1000
+            elif output_type == "kg":
+                return num * 0.001
+            elif output_type == "t":
+                return num * 1e-6
+            elif output_type == "lb":
+                return num * 0.002205
+
+        if input_type == "kg":
+            if output_type == "mg":
+                return num * 1000000
+            elif output_type == "g":
+                return num * 1000
+            elif output_type == "t":
+                return num * 0.001
+            elif output_type == "lb":
+                return num * 2.204623
+
+        if input_type == "t":
+            if output_type == "mg":
+                return num * 1e+9
+            elif output_type == "g":
+                return num * 1000000
+            elif output_type == "kg":
+                return num * 1000
+            elif output_type == "lb":
+                return num * 2204.62262
+
+        if input_type == "lb":
+            if output_type == "mg":
+                return num * 453592.37
+            elif output_type == "g":
+                return num * 453.59237
+            elif output_type == "kg":
+                return num * 0.453592
+            elif output_type == "t":
+                return num * 0.000454
+
+    print(num, input_type, "was converted to", weight(num), output_type)
+    
+
+
+
