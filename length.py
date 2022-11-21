@@ -1,9 +1,3 @@
-
-
-# 부피: cc, ml, l
-# 온도: K, C, F
-# 속도: m/s, km/h, kn, mach
-
 print("Guide : Input calculator type : length / area / weight / volume / temperature / speed")
 calculator_type = input()
 
@@ -172,6 +166,8 @@ if calculator_type == "weight":
 
     print(num, input_type, "was converted to", weight(num), output_type)
     
-
+# 부피: cc, ml, l
+# 온도: K, C, F
+# 속도: m/s, km/h, kn, mach
 
 
