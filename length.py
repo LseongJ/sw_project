@@ -1,7 +1,9 @@
-# !중요! : 코드에 대한 의견(코드 압축, 효율 증가 등)있으면 어느 경로로든 말해주셈
-# 함수 작성 전에 각주로 OOO : ~~, ~~담당 이라고 쓰기
-# ex) 이성재: mm, cm담당
 # 길이: mm, cm, m, km, ft, inch
+# 넓이: m^2, km^2, 평
+# 무게: mg, g, kg, t, lb
+# 부피: cc, ml, l
+# 온도: K, C, F
+# 속도: m/s, km/h, kn, mach
 
 print("Guide : Input calculator type : length / area / weight / volume / temperature / speed")
 calculator_type = input()
@@ -30,7 +32,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 0.03937
         
-        if input_type == 'cm':          
+        elif input_type == 'cm':          
             if output_type == "mm": 
                 return num * 10
             elif output_type == "m":
@@ -42,7 +44,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 0.393701
         
-        if input_type == "m":             
+        elif input_type == "m":             
             if output_type == "mm":
                 return num * 1000
             elif output_type == "cm":
@@ -54,7 +56,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 39.370079
 
-        if input_type == "km":             
+        elif input_type == "km":             
             if output_type == "mm":
                 return num * 1000000
             elif output_type == "cm":
@@ -66,7 +68,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 393700787
         
-        if input_type == "ft":             
+        elif input_type == "ft":             
             if output_type == "mm":
                 return num * 304.8
             elif output_type == "cm":
@@ -78,7 +80,7 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 12
         
-        if input_type == "inch":             
+        elif input_type == "inch":             
             if output_type == "mm":
                 return num * 25.4
             elif output_type == "cm":
@@ -90,8 +92,28 @@ if calculator_type == "length":
             elif output_type == "ft":
                 return num * 0.083333
         
-    print(num, input_type, "was converted to" ,length(num), output_type, end = '')            
-    #
+    print(num, input_type, "was converted to" ,length(num), output_type)            
 
+if calculator_type == "area":   
+    def area(num):
+        if input_type == "m^2":
+            if output_type == "km^2":
+                return num * 0.000001
+            elif output_type == "평":
+                return num * 0.3025
+
+        elif input_type == "km^2":
+            if output_type == "m^2":
+                return num * 1000000
+            elif output_type == "평":
+                return num * 302500
+
+        elif input_type == "평":
+            if output_type == "m^2":
+                return num * 3.305785
+            elif output_type == "km^2":
+                return num * 3.305785 * 0.000001
+            
+    print(num, input_type, "was converted to" ,area(num), output_type)
 
         
