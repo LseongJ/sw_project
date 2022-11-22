@@ -4,7 +4,7 @@
 
 2.주제 세부 사항 - 단위 종류 : 길이(6개의 단위(cm, m 등)), 넓이(3개), 무게(5개), 부피(3개), 온도(3개), 속도(4개)
 
-
+![image](https://user-images.githubusercontent.com/115673103/203234542-80afeb60-e75d-4f41-bdad-a300fd488c8e.png)
 
 3.역할분담 : 
 팀장: 뼈대코드 작성,
@@ -27,5 +27,5 @@ if calculator_type == "length":
             elif output_type == "inch":
                 return num * 0.03937
             
-    # 이런식으로 input_type을 기준으로 단위를 변환
+    # 이런식으로 calculator_type을 정하고 input_type을 기준으로 단위를 변환
 ```
