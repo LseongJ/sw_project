@@ -124,7 +124,7 @@ if calculator_type == "weight":
             elif output_type == "lb":
                 return num * 2.2046e-6
         
-        if input_type == "g":
+        elif input_type == "g":
             if output_type == "mg":
                 return num * 1000
             elif output_type == "kg":
@@ -134,7 +134,7 @@ if calculator_type == "weight":
             elif output_type == "lb":
                 return num * 0.002205
 
-        if input_type == "kg":
+        elif input_type == "kg":
             if output_type == "mg":
                 return num * 1000000
             elif output_type == "g":
@@ -144,7 +144,7 @@ if calculator_type == "weight":
             elif output_type == "lb":
                 return num * 2.204623
 
-        if input_type == "t":
+        elif input_type == "t":
             if output_type == "mg":
                 return num * 1e+9
             elif output_type == "g":
@@ -154,7 +154,7 @@ if calculator_type == "weight":
             elif output_type == "lb":
                 return num * 2204.62262
 
-        if input_type == "lb":
+        elif input_type == "lb":
             if output_type == "mg":
                 return num * 453592.37
             elif output_type == "g":
@@ -167,7 +167,84 @@ if calculator_type == "weight":
     print(num, input_type, "was converted to", weight(num), output_type)
     
 # 부피: cc, ml, l
+if calculator_type == "volume":
+    def volume(num):
+        if input_type == "cc":
+            if output_type == "ml":
+                return num * 1
+            elif output_type == "l":
+                return num * 0.001
+        
+        elif input_type == "ml":
+            if output_type == "cc":
+                return num * 1
+            elif output_type == "l":
+                return num * 0.001
+        
+        elif input_type == "l":
+            if output_type == "cc":
+                return num * 1000
+            elif output_type == "ml":
+                return num * 1000
+    
+    print(num, input_type, "was converted to", volume(num), output_type)    
+
 # 온도: K, C, F
+if calculator_type == "temperature":
+    def temperature(num):
+        if input_type == "K":
+            if output_type == "C":
+                return num * -272.15
+            elif output_type == "F":
+                return num * -457.87
+        
+        elif input_type == "C":
+            if output_type == "K":
+                return num * 274.15
+            elif output_type == "F":
+                return num * 33.8
+        
+        elif input_type == "F":
+            if output_type == "C":
+                return num * -17.222222
+            elif output_type == "K":
+                return num * 255.927778
+    
+    print(num, input_type, "was converted to", temperature(num), output_type)   
+        
 # 속도: m/s, km/h, kn, mach
+if calculator_type == "speed":
+    def speed(num):
+        if input_type == "m/s":
+            if output_type == "km/h":
+                return num * 3.6
+            elif output_type == "kn":
+                return num * 1.943844
+            elif output_type == "mach":
+                return num * 0.002941
+            
+        elif input_type == "km/h":
+            if output_type == "m/s":
+                return num * 0.277778
+            elif output_type == "kn":
+                return num * 0.539957
+            elif output_type == "mach":
+                return num * 0.000817
+            
+        elif input_type == "kn":
+            if output_type == "m/s":
+                return num * 0.514444
+            elif output_type == "km/h":
+                return num * 1.852
+            elif output_type == "mach":
+                return num * 0.001513
+            
+        elif input_type == "mach":
+            if output_type == "m/s":
+                return num * 340
+            elif output_type == "km/h":
+                return num * 1224
+            elif output_type == "kn":
+                return num * 660.907127
 
-
+    print(num, input_type, "was converted to", speed(num), output_type)
