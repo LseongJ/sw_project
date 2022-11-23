@@ -111,7 +111,7 @@ if calculator_type == "area":
             
     print(num, input_type, "was converted to" ,area(num), output_type)
 
-# 무게: mg, g, kg, t, lb         # 이성재 담당
+# 무게: mg, g, kg, t, lb        
 if calculator_type == "weight":
     def weight(num):
         if input_type == "mg":
