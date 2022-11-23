@@ -10,8 +10,8 @@ output_type = input()
 print("Guide : Input <number> which will be converted.")
 num = int(input())
 
-# 길이: mm, cm, m, km, ft, inch
-if calculator_type == "length":
+# 길이: mm, cm, m, km, ft, inch     # 팀 전원 
+if calculator_type == "length": 
     
     def length(num):
         if input_type == "mm":             
@@ -88,7 +88,7 @@ if calculator_type == "length":
         
     print(num, input_type, "was converted to" ,length(num), output_type)            
 
-# 넓이: m^2, km^2, 평
+# 넓이: m^2, km^2, 평             # 구민관 담당
 if calculator_type == "area":   
     def area(num):
         if input_type == "m^2":
@@ -111,7 +111,7 @@ if calculator_type == "area":
             
     print(num, input_type, "was converted to" ,area(num), output_type)
 
-# 무게: mg, g, kg, t, lb
+# 무게: mg, g, kg, t, lb         # 이성재 담당
 if calculator_type == "weight":
     def weight(num):
         if input_type == "mg":
@@ -166,7 +166,7 @@ if calculator_type == "weight":
 
     print(num, input_type, "was converted to", weight(num), output_type)
     
-# 부피: cc, ml, l
+# 부피: cc, ml, l    
 if calculator_type == "volume":
     def volume(num):
         if input_type == "cc":
@@ -189,7 +189,7 @@ if calculator_type == "volume":
     
     print(num, input_type, "was converted to", volume(num), output_type)    
 
-# 온도: K, C, F
+# 온도: K, C, F             
 if calculator_type == "temperature":
     def temperature(num):
         if input_type == "K":
@@ -248,3 +248,4 @@ if calculator_type == "speed":
                 return num * 660.907127
 
     print(num, input_type, "was converted to", speed(num), output_type)
+
