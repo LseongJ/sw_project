@@ -111,7 +111,7 @@ if calculator_type == "area":
             
     print(num, input_type, "was converted to" ,area(num), output_type)
 
-# 무게: mg, g, kg, t, lb          # 박유민
+# 무게: mg, g, kg, t, lb          # 박유민 담당
 if calculator_type == "weight":
     def weight(num):
         if input_type == "mg":
@@ -166,7 +166,7 @@ if calculator_type == "weight":
 
     print(num, input_type, "was converted to", weight(num), output_type)
     
-# 부피: cc, ml, l    
+# 부피: cc, ml, l                 # 김지민 담당
 if calculator_type == "volume":
     def volume(num):
         if input_type == "cc":
