@@ -189,7 +189,7 @@ if calculator_type == "volume":
     
     print(num, input_type, "was converted to", volume(num), output_type)    
 
-# 온도: K, C, F             
+# 온도: K, C, F .             # 정수종 담당             
 if calculator_type == "temperature":
     def temperature(num):
         if input_type == "K":
@@ -212,7 +212,7 @@ if calculator_type == "temperature":
     
     print(num, input_type, "was converted to", temperature(num), output_type)   
         
-# 속도: m/s, km/h, kn, mach
+# 속도: m/s, km/h, kn, mach    # 이성재 담당
 if calculator_type == "speed":
     def speed(num):
         if input_type == "m/s":
