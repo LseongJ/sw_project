@@ -29,6 +29,7 @@ if calculator_type == "length":
             
     # 이런식으로 calculator_type을 정하고 input_type을 기준으로 단위를 변환
 ```
+5.문제 및 해결: 입력단위에 소수점이 존재할 경우, int로 받아 오류가 생겼던 점을 float으로 입력을 받아 오류수정.
 
 ### <2주차 11/24(목) ~ 11/30(수)>
 
