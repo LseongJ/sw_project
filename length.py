@@ -8,7 +8,7 @@ print("Guide : Input what you want to convert 'to' :")
 output_type = input()
 
 print("Guide : Input <number> which will be converted.")
-num = int(input())
+num = float(input())
 
 # 길이: mm, cm, m, km, ft, inch     # 팀 전원 
 if calculator_type == "length": 
