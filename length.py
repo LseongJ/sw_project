@@ -1,15 +1,52 @@
+# start
+cal_type = True
+in_type = True
+out_type = True
+is_positive = True
+# --------------------계산기 타입--------------------#        
 print("Guide : Input calculator type : length / area / weight / volume / temperature / speed")
 calculator_type = input()
+while cal_type == True:
+    if calculator_type.isalpha() == True:
+        cal_type = False
+    else:
+        print("Input Error : please input correct calculator type:")
+        calculator_type = input()        
 
+# --------------------변환 타입--------------------#   
 print("Guide : Input what you want to convert 'from' :")
 input_type = input()
+while in_type == True:
+    if input_type.isalpha() == True:
+        in_type = False
+    else:
+        print("Input Error : please input correct 'input' type:")
+        input_type = input() 
 
-print("Guide : Input what you want to convert 'to' :")
+print("Guide : Input what you want to convert 'to':")
 output_type = input()
+while out_type == True:
+    if output_type.isalpha() == True:
+        out_type = False
+    else:
+        print("Input Error : please input correct 'output' type:")
+        output_type = input() 
 
-print("Guide : Input <number> which will be converted.")
-num = float(input())
-
+# --------------------숫자 입력--------------------#   
+print("Guide : Input <number> which will be converted.")           
+while is_positive == True:
+    try:
+        num = float(input())
+    except ValueError:
+        print("Input Error : please input 'float' again:")
+        num = float(input())
+    
+    if (num > 0) and (num is not ValueError):
+        is_positive = False
+    elif (num < 0 or num == 0):
+        print("Sign Error : please input positive number: ")
+    
+# --------------------계산--------------------#   
 # 길이: mm, cm, m, km, ft, inch     # 팀 전원 
 if calculator_type == "length": 
     
