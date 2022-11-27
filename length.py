@@ -33,13 +33,12 @@ while out_type == True:
         output_type = input() 
 
 # --------------------숫자 입력--------------------#   
-print("Guide : Input <number> which will be converted.")           
+print("Guide : Input <positive float number> which will be converted:")           
 while is_positive == True:
     try:
         num = float(input())
     except ValueError:
-        print("Input Error : please input 'float' again:")
-        num = float(input())
+        print("Input Error : please input 'positive float' again:")
     
     if (num > 0) and (num is not ValueError):
         is_positive = False
