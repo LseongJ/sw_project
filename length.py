@@ -8,29 +8,253 @@ print("Guide : Input calculator type : length / area / weight / volume / tempera
 calculator_type = input()
 while cal_type == True:
     if calculator_type.isalpha() == True:
-        cal_type = False
+        if (calculator_type == "length") or (calculator_type == "area") or (calculator_type == "weight") or (calculator_type == "volume") or (calculator_type == "temperature") or (calculator_type == "speed"): 
+            cal_type = False
+        else:
+            print("Input Error : please input correct calculator type in guide:")
+            calculator_type = input()
     else:
-        print("Input Error : please input correct calculator type:")
+        print("Input Error : please input <string> calculator type:")
         calculator_type = input()        
 
-# --------------------변환 타입--------------------#   
-print("Guide : Input what you want to convert 'from' :")
+# --------------------input--------------------#   
+print("Guide : Input what you want to convert 'from':")
 input_type = input()
 while in_type == True:
-    if input_type.isalpha() == True:
-        in_type = False
-    else:
-        print("Input Error : please input correct 'input' type:")
-        input_type = input() 
+    if input_type.isalpha() == True:           # 문자열 검사
+        if calculator_type == "length":
+            if input_type == 'km' or input_type == 'm' or input_type == 'mm' or input_type == 'cm' or input_type == 'ft' or input_type == 'inch':           
+                in_type = False
+            else:
+                print("please input correct 'from' type of length:")
+                input_type = input()
+        
+        elif calculator_type == "area":
+            if input_type == '평':         
+                in_type = False
+            else:
+                print("please input correct 'from' type of area:")
+                input_type = input()
+        
+        elif calculator_type == "weight":
+            if input_type == 'mg' or input_type == 'g' or input_type == 'kg' or input_type == 't' or input_type == 'lb':           
+                in_type = False
+            else:
+                print("please input correct 'from' type of weight:")
+                input_type = input()
+        
+        elif calculator_type == "volume":
+            if input_type == 'cc' or input_type == 'ml' or input_type == 'l':           
+                in_type = False
+            else:
+                print("please input correct 'from' type of volume:")
+                input_type = input()
+                
+        elif calculator_type == "temperature":
+            if input_type == 'C' or input_type == 'K' or input_type == 'F':           
+                in_type = False
+            else:
+                print("please input correct 'from' type of temperature:")
+                input_type = input()
+        
+        elif calculator_type == "speed":
+            if input_type == 'km/h' or input_type == 'm/s' or input_type == 'mach' or input_type == 'kn':           
+                in_type = False
+            else:
+                print("please input correct 'from' type of speed:")
+                input_type = input()
+    
+    elif input_type.isalpha() == False:
+        if input_type == 'km^2' or input_type == 'm^2' or input_type == 'm/s' or input_type == 'km/h':        
+            in_type = False
+
+        else:
+            print("Input Error : please input correct 'input' type:")
+            input_type = input() 
+
+# --------------------ouput--------------------#   
 
 print("Guide : Input what you want to convert 'to':")
 output_type = input()
-while out_type == True:
-    if output_type.isalpha() == True:
-        out_type = False
-    else:
-        print("Input Error : please input correct 'output' type:")
-        output_type = input() 
+while out_type == True: 
+    if output_type.isalpha() == True:    # 평
+        if input_type == 'km':
+            if output_type == 'm' or output_type == 'cm' or output_type == 'mm' or output_type == 'ft' or output_type == 'inch':
+                out_type = False
+            else:
+                print("please input correct 'to' type of length:")
+                output_type = input()
+                
+        elif input_type == 'm':
+            if output_type == 'mm' or output_type == 'cm' or output_type == 'km' or output_type == 'ft' or output_type == 'inch':
+                out_type = False
+            else:
+                print("please input correct 'to' type of length:")
+                output_type = input()
+        
+        elif input_type == 'mm':
+            if output_type == 'm' or output_type == 'cm' or output_type == 'mm' or output_type == 'ft' or output_type == 'inch':
+                out_type = False
+            else:
+                print("please input correct 'to' type of length:")
+                output_type = input()
+                
+        elif input_type == 'cm':
+            if output_type == 'm' or output_type == 'km' or output_type == 'mm' or output_type == 'ft' or output_type == 'inch':
+                out_type = False
+            else:
+                print("please input correct 'to' type of length:")
+                output_type = input()
+                
+        elif input_type == 'ft':
+            if output_type == 'm' or output_type == 'cm' or output_type == 'km' or output_type == 'mm' or output_type == 'inch':
+                out_type = False
+            else:
+                print("please input correct 'to' type of length:")
+                output_type = input()
+                
+        elif input_type == 'inch':
+            if output_type == 'm' or output_type == 'cm' or output_type == 'km' or output_type == 'ft' or output_type == 'mm':
+                out_type = False
+            else:
+                print("please input correct 'to' type of length:")
+                output_type = input()
+        
+        #--------------------#
+        elif input_type == "km^2":
+            if output_type == "평" or output_type == "m^2":
+                out_type = False
+            else:
+                print("please input correct 'to' type of area:")
+                output_type = input()
+        
+        elif input_type == "m^2":
+            if output_type == "평" or output_type == "km^2":
+                out_type = False
+            else:
+                print("please input correct 'to' type of area:")
+                output_type = input()
+        #--------------------#
+        
+        elif input_type == 'mg':
+            if output_type == 'g' or output_type == 'kg' or output_type == 't' or output_type == 'lb':
+                out_type = False
+            else:
+                print("please input correct 'to' type of weight:")
+                output_type = input()
+                
+        elif input_type == 'g':
+            if output_type == 'mg' or output_type == 'kg' or output_type == 't' or output_type == 'lb':
+                out_type = False
+            else:
+                print("please input correct 'to' type of weight:")
+                output_type = input()
+        
+        elif input_type == 'kg':
+            if output_type == 'mg' or output_type == 'g' or output_type == 't' or output_type == 'lb':
+                out_type = False
+            else:
+                print("please input correct 'to' type of weight:")
+                output_type = input()
+                
+        elif input_type == 't':
+            if output_type == 'mg' or output_type == 'kg' or output_type == 'g' or output_type == 'lb':
+                out_type = False
+            else:
+                print("please input correct 'to' type of weight:")
+                output_type = input()
+                
+        elif input_type == 'lb':
+            if output_type == 'mg' or output_type == 'g' or output_type == 'kg' or output_type == 't':
+                out_type = False
+            else:
+                print("please input correct 'to' type of weight:")
+                output_type = input()
+        
+        #--------------------#
+        
+        elif input_type == 'cc':
+            if output_type == 'ml' or output_type == 'l':
+                out_type = False
+            else:
+                print("please input correct 'to' type of volume:")
+                output_type = input()
+                
+        elif input_type == 'ml':
+            if output_type == 'cc' or output_type == 'l':
+                out_type = False
+            else:
+                print("please input correct 'to' type of volume:")
+                output_type = input()
+        
+        elif input_type == 'l':
+            if output_type == 'cc' or output_type == 'ml':
+                out_type = False
+            else:
+                print("please input correct 'to' type of volume:")
+                output_type = input() 
+   
+        #-------------------#
+        
+        elif input_type == 'K':
+            if output_type == 'C' or output_type == 'F':
+                out_type = False
+            else:
+                print("please input correct 'to' type of temperature:")
+                output_type = input()
+                
+        elif input_type == 'C':
+            if output_type == 'K' or output_type == 'F':
+                out_type = False
+            else:
+                print("please input correct 'to' type of temperature:")
+                output_type = input()
+        
+        elif input_type == 'F':
+            if output_type == 'K' or output_type == 'C':
+                out_type = False
+            else:
+                print("please input correct 'to' type of temperature:")
+                output_type = input()
+        
+        #-------------------#
+        
+        elif input_type == 'm/s':
+            if output_type == 'km/h' or output_type == 'mach' or output_type == 'kn':
+                out_type = False
+            else:
+                print("please input correct 'to' type of speed:")
+                output_type = input()
+                
+        elif input_type == 'km/h':
+            if output_type == 'm/s' or output_type == 'mach' or output_type == 'kn':
+                out_type = False
+            else:
+                print("please input correct 'to' type of speed:")
+                output_type = input()
+        
+        elif input_type == 'kn':
+            if output_type == 'm/s' or output_type == 'km/h' or output_type == 'mach':
+                out_type = False
+            else:
+                print("please input correct 'to' type of speed:")
+                output_type = input()
+                
+        elif input_type == 'mach':
+            if output_type == 'm/s' or output_type == 'km/h' or output_type == 'kn':
+                out_type = False
+            else:
+                print("please input correct 'to' type of speed:")
+                output_type = input()
+                
+    #-------------------# 
+    
+    elif output_type.isalpha() == False:
+        if output_type == "km^2" or output_type == "m^2" or output_type == 'm/s' or output_type == 'km/h':
+            out_type = False   
+        else:
+            print("Input Error : please input correct 'output' type:")
+            output_type = input() 
 
 # --------------------숫자 입력--------------------#   
 print("Guide : Input <positive float number> which will be converted:")           
@@ -225,7 +449,7 @@ if calculator_type == "volume":
     
     print(num, input_type, "was converted to", volume(num), output_type)    
 
-# 온도: K, C, F .                 # 정수종 담당             
+# 온도: K, C, F                   # 정수종 담당             
 if calculator_type == "temperature":
     def temperature(num):
         if input_type == "K":
