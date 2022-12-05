@@ -23,14 +23,14 @@ if calculator_type == "length":
             if output_type == "cm":
                 return num / 10
             elif output_type == "m":
-                return num / 1000             
+                return num / 1000           
             elif output_type == "km":
                 return num / 1000000
             elif output_type == "ft":
                 return num * 0.003281
             elif output_type == "inch":
                 return num * 0.03937
-          
+        
     # 이런식으로 calculator_type을 정하고 input_type을 기준으로 단위를 변환
 ```
 
@@ -54,9 +54,9 @@ if calculator_type == "length":
 #### 문제 및 해결:
 
 개선사항: 입력을 도와줄 가이드라인을 출력 후 입력 받음
-![image](https://user-images.githubusercontent.com/115673103/204733181-7ad90448-5e8a-417d-b7a3-019cfb505ba6.png)
+![image](https://user-images.githubusercontent.com/115673103/204733181-7ad90448-5e8a-417d-b7a3-019cfb505ba6.png)                 
 
-버그수정                                                                     
+버그수정
 
 1. calculator_type에서 입력 문자열 구성이 영어가 아닌 경우에도 다음단계로 진행되는 버그수정
 
@@ -64,8 +64,7 @@ if calculator_type == "length":
 calculator_type = input()
 while cal_type == True:
 	if calculator_type.isalpha() == True:
-		if (calculator_type == "length") or (calculator_type == "area") or (calculator_type == "weight") or (calculator_type == "volume") or (calculator_type == "temperature") or (calculator_type == "speed"):
-			cal_type = False
+		cal_type = False
 	else:
 		print("Input Error : please input correct calculator type in guide:")
 		calculator_type = input()
@@ -75,7 +74,7 @@ while cal_type == True:
 3. 속도변환, 넓이변환에서 km/h, km^2와 같이 특수문자(^, /)에 대한 예외처리를 if문으로 해결
    ```python
    elif input_type.isalpha() == False:
-           if input_type == 'km^2' or input_type == 'm^2' or input_type == 'm/s' or input_type == 'km/h':      
+           if input_type == 'km^2' or input_type == 'm^2' or input_type == 'm/s' or input_type == 'km/h':    
                in_type = False
    ```
 
@@ -93,7 +92,33 @@ while cal_type == True:
 개선사항: 입력 오류에 대한 가이드라인을 명확하게 제시
 ![image](https://user-images.githubusercontent.com/115673103/204733418-e19f42c7-d925-4a0e-b8bb-9dfe39038f92.png)
 
-버그수정: “type”류 입력 시 지정된 문자열만을 받을 수 있게 수정, num입력 시 양의 실수 판정과 양수판정을 예외처리(try, except)를 사용하여 각각 해결
-![image](https://user-images.githubusercontent.com/115673103/204733496-b5351b1e-97d4-4019-8aab-966447112d73.png)
+버그수정: 
 
-11
+1. type류 입력 시 지정된 문자열만을 받을 수 있게 수정
+
+   ```python
+   calculator_type = input()
+   while cal_type == True:
+   	if calculator_type.isalpha() == True:
+   		if (calculator_type == "length") or (calculator_type == "area") or (calculator_type == "weight") or (calculator_type == "volume") or (calculator_type == "temperature") or (calculator_type == "speed"):
+   			cal_type = False
+   	else:
+   		print("Input Error : please input correct calculator type in guide:")
+   		calculator_type = input()
+   ```
+2. num입력 시 실수판정과 양수판정을 예외처리(try, except)를 사용하여 각각 해결
+
+   ```python
+   #--------------------숫자 입력--------------------#   
+   print("Guide : Input <positive float number> which will be converted:")         
+   while is_positive == True:
+       try:
+           num = float(input())
+       except ValueError:
+           print("Input Error : please input 'positive float' again:")
+     
+       if (num > 0) and (num is not ValueError):
+           is_positive = False
+       elif (num < 0 or num == 0):
+           print("Sign Error : please input positive number: ")
+   ```
