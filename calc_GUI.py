@@ -153,7 +153,7 @@ def btnpress():
             entry2.insert(0, round(float(x) * 12, 4))
         btn = Button(tk, text="inch->ft", command=inch2ft).grid(row=8,column=5)
     #----------------------------------------------------------------------#  
-    if combo.get() == "넓이":
+    if combo.get() == "넓이": ##
         
         
         
