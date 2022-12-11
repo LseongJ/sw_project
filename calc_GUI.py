@@ -3,7 +3,7 @@ from tkinter.ttk import *
 
 tk = Tk()
 tk.title("테스트")
-tk.geometry("700x300")
+tk.geometry("650x300")
 
 btn = Button(tk)
 
@@ -23,7 +23,10 @@ combo.config(state="readonly")
 combo.current(0)
 combo.grid(column=1,row=0)
 #-------------------------------------------------------------------#
-
+def reset():
+    entry2.delete(0, "end")   
+btn = Button(tk, text="결과 초기화", command= reset).grid(row=3,column=2) 
+#-------------------------------------------------------------------#   
 def btnpress():
     Label(tk, text=combo.get()+"가 선택되었습니다").grid(column=3,row=0)
     if combo.get() == "길이":
@@ -153,10 +156,212 @@ def btnpress():
             entry2.insert(0, round(float(x) * 12, 4))
         btn = Button(tk, text="inch->ft", command=inch2ft).grid(row=8,column=5)
     #----------------------------------------------------------------------#  
-    if combo.get() == "넓이": #
-        
-        
-        
+    if combo.get() == "넓이":
+        def m2tokm2():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.000001, 4))
+        btn = Button(tk, text="m^2->km^2", command=m2tokm2).grid(row=4,column=0)
+        def m2top():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.3025, 4))
+        btn = Button(tk, text="m^2->평", command=m2top).grid(row=5,column=0)
+        #----------------------------------------------------------------------#
+        def km2tom2():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000000, 4))
+        btn = Button(tk, text="km^2->m^2", command=km2tom2).grid(row=4,column=1)
+        def km2top():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 302500, 4))
+        btn = Button(tk, text="km^2->평", command=km2top).grid(row=5,column=1)
+        #----------------------------------------------------------------------#
+        def ptom2():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 3.305785, 4))
+        btn = Button(tk, text="평->m^2", command=ptom2).grid(row=4,column=2)
+        def ptokm2():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.0000033, 9))
+        btn = Button(tk, text="평->km^2", command=ptokm2).grid(row=5,column=2)
+    #----------------------------------------------------------------------#
+    if combo.get() == "무게":
+        def mg2g():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.001, 9))
+        btn = Button(tk, text="mg->g", command=mg2g).grid(row=4,column=0)
+        def mg2kg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1e-6, 9))
+        btn = Button(tk, text="mg->kg", command=mg2kg).grid(row=5,column=0)
+        def mg2t():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 10e-10, 9))
+        btn = Button(tk, text="mg->t", command=mg2t).grid(row=6,column=0)
+        def mg2lb():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 2.2046e-6, 9))
+        btn = Button(tk, text="mg->lb", command=mg2lb).grid(row=7,column=0)
+        #----------------------------------------------------------------------#
+        def g2mg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000, 9))
+        btn = Button(tk, text="g->mg", command=g2mg).grid(row=4,column=1)
+        def g2kg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.001, 9))
+        btn = Button(tk, text="g->kg", command=g2kg).grid(row=5,column=1)
+        def g2t():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1e-6, 9))
+        btn = Button(tk, text="g->t", command=g2t).grid(row=6,column=1)
+        def g2lb():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.002205, 9))
+        btn = Button(tk, text="g->lb", command=g2lb).grid(row=7,column=1)
+        #----------------------------------------------------------------------#
+        def kg2mg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000000, 5))
+        btn = Button(tk, text="kg->mg", command=kg2mg).grid(row=4,column=2)
+        def kg2g():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000, 5))
+        btn = Button(tk, text="kg->g", command=kg2g).grid(row=5,column=2)
+        def kg2t():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.001, 5))
+        btn = Button(tk, text="kg->t", command=kg2t).grid(row=6,column=2)
+        def kg2lb():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 2.204623, 5))
+        btn = Button(tk, text="kg->lb", command=kg2lb).grid(row=7,column=2)
+        #----------------------------------------------------------------------#
+        def t2mg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1e+9, 9))
+        btn = Button(tk, text="t->mg", command=t2mg).grid(row=4,column=3)
+        def t2g():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000000, 9))
+        btn = Button(tk, text="t->g", command=t2g).grid(row=5,column=3)
+        def t2kg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000, 9))
+        btn = Button(tk, text="t->kg", command=t2kg).grid(row=6,column=3)
+        def t2lb():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 2204.62262, 9))
+        btn = Button(tk, text="t->lb", command=t2lb).grid(row=7,column=3)
+        #----------------------------------------------------------------------#
+        def lb2mg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 453592.37, 9))
+        btn = Button(tk, text="lb->mg", command=lb2mg).grid(row=4,column=4)
+        def lb2g():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 453.59237, 9))
+        btn = Button(tk, text="lb->g", command=lb2g).grid(row=5,column=4)
+        def lb2kg():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.453592, 9))
+        btn = Button(tk, text="lb->kg", command=lb2kg).grid(row=6,column=4)
+        def lb2t():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.000454, 9))
+        btn = Button(tk, text="lb->t", command=lb2t).grid(row=7,column=4)
+    #----------------------------------------------------------------------#  
+    if combo.get() == "부피":
+        def ml2l():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.001, 9))
+        btn = Button(tk, text="ml->l", command=ml2l).grid(row=4,column=0)
+        #----------------------------------------------------------------------#
+        def l2ml():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1000, 9))
+        btn = Button(tk, text="l->ml", command=l2ml).grid(row=4,column=1)    
+    #----------------------------------------------------------------------#
+    if combo.get() == "온도":
+        def k2c():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * -272.15, 9))
+        btn = Button(tk, text="K->C", command=k2c).grid(row=4,column=0)
+        def k2f():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * -457.87, 9))
+        btn = Button(tk, text="K->F", command=k2f).grid(row=5,column=0)
+        #----------------------------------------------------------------------#
+        def ctk():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 274.15, 9))
+        btn = Button(tk, text="C->K", command=ctk).grid(row=4,column=1)
+        def c2f():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 33.8, 9))
+        btn = Button(tk, text="C->F", command=c2f).grid(row=5,column=1)
+        #----------------------------------------------------------------------#
+        def f2c():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * -17.222222, 9))
+        btn = Button(tk, text="F->C", command=f2c).grid(row=4,column=2)
+        def f2k():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 255.927778, 9))
+        btn = Button(tk, text="F->K", command=f2k).grid(row=5,column=2)
+    #----------------------------------------------------------------------#    
+    if combo.get() == "속도":
+        def ms2kh():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 3.6, 9))
+        btn = Button(tk, text="ms->kh", command=ms2kh).grid(row=4,column=0)
+        def ms2kn():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1.943844, 9))
+        btn = Button(tk, text="ms->kn", command=ms2kn).grid(row=5,column=0)
+        def ms2mach():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.002941, 9))
+        btn = Button(tk, text="ms->mach", command=ms2mach).grid(row=6,column=0)    
+        #----------------------------------------------------------------------#
+        def kh2ms():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.277778, 9))
+        btn = Button(tk, text="kh->ms", command=kh2ms).grid(row=4,column=1)
+        def kh2kn():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.539957, 9))
+        btn = Button(tk, text="kh->kn", command=kh2kn).grid(row=5,column=1)
+        def kh2mach():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.000817, 9))
+        btn = Button(tk, text="kh->mach", command=kh2mach).grid(row=6,column=1)    
+        #----------------------------------------------------------------------#
+        def kn2ms():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.514444, 9))
+        btn = Button(tk, text="kn->ms", command=kn2ms).grid(row=4,column=2)
+        def kn2kh():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1.852, 9))
+        btn = Button(tk, text="kn->kh", command=kn2kh).grid(row=5,column=2)
+        def kn2mach():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 0.001513, 9))
+        btn = Button(tk, text="kn->mach", command=kn2mach).grid(row=6,column=2)    
+        #----------------------------------------------------------------------#
+        def mach2ms():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 340, 9))
+        btn = Button(tk, text="mach->ms", command=mach2ms).grid(row=4,column=3)
+        def mach2kh():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 1224, 9))
+        btn = Button(tk, text="mach->kh", command=mach2kh).grid(row=5,column=3)
+        def mach2kn():
+            x = entry1.get()
+            entry2.insert(0, round(float(x) * 660.907127, 9))
+        btn = Button(tk, text="mach->kn", command=mach2kn).grid(row=6,column=3)    
+        #----------------------------------------------------------------------#
         
         
         
