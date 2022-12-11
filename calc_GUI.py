@@ -362,21 +362,7 @@ def btnpress():
             entry2.insert(0, round(float(x) * 660.907127, 9))
         btn = Button(tk, text="mach->kn", command=mach2kn).grid(row=6,column=3)    
         #----------------------------------------------------------------------#
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-          
+     
    
 btn = Button(tk, text="선택", command=btnpress).grid(row=0,column=2)
 #--------------------------------------------------------------------#

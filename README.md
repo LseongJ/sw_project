@@ -23,14 +23,14 @@ if calculator_type == "length":
             if output_type == "cm":
                 return num / 10
             elif output_type == "m":
-                return num / 1000           
+                return num / 1000         
             elif output_type == "km":
                 return num / 1000000
             elif output_type == "ft":
                 return num * 0.003281
             elif output_type == "inch":
                 return num * 0.03937
-        
+      
     # 이런식으로 calculator_type을 정하고 input_type을 기준으로 단위를 변환
 ```
 
@@ -54,7 +54,7 @@ if calculator_type == "length":
 #### 문제 및 해결:
 
 개선사항: 입력을 도와줄 가이드라인을 출력 후 입력 받음
-![image](https://user-images.githubusercontent.com/115673103/204733181-7ad90448-5e8a-417d-b7a3-019cfb505ba6.png)                 
+![image](https://user-images.githubusercontent.com/115673103/204733181-7ad90448-5e8a-417d-b7a3-019cfb505ba6.png)
 
 버그수정
 
@@ -74,7 +74,7 @@ while cal_type == True:
 3. 속도변환, 넓이변환에서 km/h, km^2와 같이 특수문자(^, /)에 대한 예외처리를 if문으로 해결
    ```python
    elif input_type.isalpha() == False:
-           if input_type == 'km^2' or input_type == 'm^2' or input_type == 'm/s' or input_type == 'km/h':    
+           if input_type == 'km^2' or input_type == 'm^2' or input_type == 'm/s' or input_type == 'km/h':  
                in_type = False
    ```
 
@@ -92,7 +92,7 @@ while cal_type == True:
 개선사항: 입력 오류에 대한 가이드라인을 명확하게 제시
 ![image](https://user-images.githubusercontent.com/115673103/204733418-e19f42c7-d925-4a0e-b8bb-9dfe39038f92.png)
 
-버그수정: 
+버그수정:
 
 1. type류 입력 시 지정된 문자열만을 받을 수 있게 수정
 
@@ -110,15 +110,57 @@ while cal_type == True:
 
    ```python
    #--------------------숫자 입력--------------------#   
-   print("Guide : Input <positive float number> which will be converted:")         
+   print("Guide : Input <positive float number> which will be converted:")   
    while is_positive == True:
        try:
            num = float(input())
        except ValueError:
            print("Input Error : please input 'positive float' again:")
-     
+
        if (num > 0) and (num is not ValueError):
            is_positive = False
        elif (num < 0 or num == 0):
            print("Sign Error : please input positive number: ")
    ```
+
+### <4주차 12/8(목) ~ 12/14(수)>
+
+#### 활동내용: GUI구현
+
+#### 역할 분담
+
+이성재(팀장): readme.md수정, GUI구현
+팀장 포함 팀 전원: GUI구현에 따른 버그수정 및 개선
+
+#### 문제 및 해결
+
+개선사항: GUI를 구현함으로써 기존 콘솔에서 아쉬웠던 편의성 부분을 개선
+
+버그수정: 최초 1회 실행에서 결과가 나온 후, 결과를 초기화 하지 않고 2차 실행을 할 경우
+‘결과’값이 올바르지 않게 나오는 버그 수정(“결과 초기화” 버튼 구현) 
+
+### GUI버전 설명
+GUI_guide.txt참조
+### 프로젝트 평가 및 향후 과제
+
+1.계획과 결과에 대한 평가                            
+<1> 1주차에 짰던 코드개요를 중심으로 버그 수정 및 코드 개선을 했고, 그 결과 팀원들이
+원했던 방향으로 프로젝트를 진행한 점이 만족스러웠다.                        
+
+<2> 처음 코드를 짤 때 버그가 많았다는 점에서 아쉽긴 했어도 팀원들의 집단지성으로
+여러 오류들을 개선했다는 점이 팀워크 부분에서 만족스러웠다.     
+
+2.현 프로젝트에서 내세우고 싶은 점                        
+<1> 코드를 실행시키면 나오는 입출력 가이드를 자세하게 구현했다는 점을 내세우고 싶다.                 
+
+<2> 콘솔의 부족한 편의성을 GUI로 구현했다는 점이 잘한 것 같다.
+
+3.프로젝트의 개선 또는 발전 방향 제시
+<1> GUI버전에서, 버튼에 대한 좀 더 자세한 설명을 추가할 수 있을 것 같다.                       
+
+<2> 단순히 '길이' <--> '길이' 변환이 아닌, '길이' <--> '넓이'같이 다른 단위끼리도
+변환할 수 있게 개선하면 좋을 것 같다.                                              
+
+<3> 간단한 계산기 임에도 불구하고 여러 케이스를 고려하다보니 코드가 500줄이 넘어갔는데, 이를 class구문을 이용하여 간소화시켜야할 것 같다.
+
+
