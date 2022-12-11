@@ -363,21 +363,6 @@ def btnpress():
         btn = Button(tk, text="mach->kn", command=mach2kn).grid(row=6,column=3)    
         #----------------------------------------------------------------------#
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-          
-   
 btn = Button(tk, text="선택", command=btnpress).grid(row=0,column=2)
 #--------------------------------------------------------------------#
 
