@@ -366,5 +366,4 @@ def btnpress():
 btn = Button(tk, text="선택", command=btnpress).grid(row=0,column=2)
 #--------------------------------------------------------------------#
 
-
 tk.mainloop()
