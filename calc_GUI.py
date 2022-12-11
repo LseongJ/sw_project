@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter.ttk import *
 
 tk = Tk()
-tk.title("테스트")
+tk.title("단위변환 계산기")
 tk.geometry("650x300")
 
 btn = Button(tk)
@@ -313,37 +313,37 @@ def btnpress():
         def ms2kh():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 3.6, 9))
-        btn = Button(tk, text="ms->kh", command=ms2kh).grid(row=4,column=0)
+        btn = Button(tk, text="m/s->k/h", command=ms2kh).grid(row=4,column=0)
         def ms2kn():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 1.943844, 9))
-        btn = Button(tk, text="ms->kn", command=ms2kn).grid(row=5,column=0)
+        btn = Button(tk, text="m/s->kn", command=ms2kn).grid(row=5,column=0)
         def ms2mach():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 0.002941, 9))
-        btn = Button(tk, text="ms->mach", command=ms2mach).grid(row=6,column=0)    
+        btn = Button(tk, text="m/s->mach", command=ms2mach).grid(row=6,column=0)    
         #----------------------------------------------------------------------#
         def kh2ms():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 0.277778, 9))
-        btn = Button(tk, text="kh->ms", command=kh2ms).grid(row=4,column=1)
+        btn = Button(tk, text="k/h->m/s", command=kh2ms).grid(row=4,column=1)
         def kh2kn():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 0.539957, 9))
-        btn = Button(tk, text="kh->kn", command=kh2kn).grid(row=5,column=1)
+        btn = Button(tk, text="k/h->kn", command=kh2kn).grid(row=5,column=1)
         def kh2mach():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 0.000817, 9))
-        btn = Button(tk, text="kh->mach", command=kh2mach).grid(row=6,column=1)    
+        btn = Button(tk, text="k/h->mach", command=kh2mach).grid(row=6,column=1)    
         #----------------------------------------------------------------------#
         def kn2ms():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 0.514444, 9))
-        btn = Button(tk, text="kn->ms", command=kn2ms).grid(row=4,column=2)
+        btn = Button(tk, text="kn->m/s", command=kn2ms).grid(row=4,column=2)
         def kn2kh():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 1.852, 9))
-        btn = Button(tk, text="kn->kh", command=kn2kh).grid(row=5,column=2)
+        btn = Button(tk, text="kn->k/h", command=kn2kh).grid(row=5,column=2)
         def kn2mach():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 0.001513, 9))
@@ -352,11 +352,11 @@ def btnpress():
         def mach2ms():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 340, 9))
-        btn = Button(tk, text="mach->ms", command=mach2ms).grid(row=4,column=3)
+        btn = Button(tk, text="mach->m/s", command=mach2ms).grid(row=4,column=3)
         def mach2kh():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 1224, 9))
-        btn = Button(tk, text="mach->kh", command=mach2kh).grid(row=5,column=3)
+        btn = Button(tk, text="mach->k/h", command=mach2kh).grid(row=5,column=3)
         def mach2kn():
             x = entry1.get()
             entry2.insert(0, round(float(x) * 660.907127, 9))
