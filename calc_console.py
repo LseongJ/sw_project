@@ -1,5 +1,5 @@
 #start
-#11111111
+#1
 cal_type = True
 in_type = True
 out_type = True
