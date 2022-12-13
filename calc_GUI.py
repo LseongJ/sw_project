@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter.ttk import *
-##1
 tk = Tk()
 tk.title("단위변환 계산기")
 tk.geometry("650x300")
